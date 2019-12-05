@@ -4,11 +4,11 @@ import { Route, Redirect } from 'react-router-dom';
 
 import AuthLayout from '~/pages/_layouts/auth';
 import defaultLayout from '~/pages/_layouts/default';
-import store from '~/store';
+import { store } from '~/store';
 
 export default function RouteWrapper({
   component: Component,
-  isPrivate,
+  isPrivate = false,
   ...rest
 }) {
   const { signed } = store.getState().auth;
@@ -37,9 +37,10 @@ export default function RouteWrapper({
 
 RouteWrapper.propTypes = {
   isPrivate: PropTypes.bool,
-  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+    .isRequired,
 };
 
-RouteWrapper.propTypes = {
+RouteWrapper.defaultProps = {
   isPrivate: false,
 };
