@@ -7,7 +7,8 @@ import { Wrapper } from './styles';
 export default function defaultLayout({ children }) {
   return (
     <Wrapper>
-      <Header> {children} </Header>{' '}
+      <Header> </Header>
+      {children}
     </Wrapper>
   );
 }
