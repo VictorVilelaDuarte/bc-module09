@@ -17,3 +17,9 @@ export function updateProfileFailure() {
     type: '@user/UPDATE_PROFILE_REQUEST',
   };
 }
+
+export function signOut() {
+  return {
+    type: '@user/SIGN_OUT',
+  };
+}
